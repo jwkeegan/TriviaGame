@@ -1,18 +1,77 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-size: 100%;
+}
+
 .container {
     position: relative;
     width: 768px;
+    min-height: 400px;
     margin: 20px auto 0;
+
+    border: 2px solid gray;
+    background-color: orange;
+}
+
+h1 {
+    width: 202px;
+    height: 72px;
+    margin: 20px auto;
+    line-height: 2;
+}
+
+#title-image {
+    height: 72px;
+    float: left;
+}
+
+#title-text {
+    float: left;
+    clear: right;
+}
+
+#start-button {
+    clear: both;
 }
 
 div {
     text-align: center;
 }
 
-#answers {
-    width: 30%;
+#question {
+    width: 80%;
     margin: 0 auto;
 }
 
+#time-remaining {
+    height: 20px;
+}
+
+#answers {
+    width: 30%;
+    margin: 0 auto 20px;
+}
+
+#response {
+    height: 20px;
+    margin: 5px 0;
+    padding: 3px;
+    border: 2px solid darkorange;
+    background-color: lightgray;
+}
+
 #response:hover {
-    border: 1px solid black;
+    border-color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 640px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        width: 600px;
+    }
 }

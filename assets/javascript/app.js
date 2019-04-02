@@ -9,14 +9,73 @@ $(document).ready(function () {
     }
 
     var q2 = {
-        prompt: "Which basketball player did not have his skill taken",
+        prompt: "Which basketball player did not have his skill taken?",
         responses: ["Charles Barkley", "Muggsy Bogues", "Larry Bird", "Patrick Ewing"],
         answer: 2
     }
 
+    var q3 = {
+        prompt: "What was the half-time lead for the Monstars?",
+        responses: ["48", "42", "51", "55"],
+        answer: 0
+    }
+
+    var q4 = {
+        prompt: "Which Independent League Baseball hat does Bill Murray wear during the movie?",
+        responses: ["Sioux City Explorers", "Winnipeg Goldeyes", "Chicago Dogs", "Saint Paul Saints"],
+        answer: 3
+    }
+    
+    var q5 = {
+        prompt: "Which name below is not the name of one of the Monstars",
+        responses: ["Blinky", "Pound", "Nawt", "Bupkus"],
+        answer: 0
+    }
+    
+    var q6 = {
+        prompt: "Which Tune is not on the Tune Squad?",
+        responses: ["Yosemite Sam", "Granny", "Elmer Fudd", "Foghorn Leghorn"],
+        answer: 1
+    }
+    
+    var q7 = {
+        prompt: "Which Tune is the first character to speak?",
+        responses: ["Bugs Bunny", "Porky the Pig", "Daffy Duck", "Sylvester"],
+        answer: 2
+    }
+    
+    var q8 = {
+        prompt: "What Minor League team did Michael Jordan play for?",
+        responses: ["Chattanooga Lookouts", "Jackson Generals", "Tennessee Smokies", "Birmingham Barons"],
+        answer: 3
+    }
+    
+    var q9 = {
+        prompt: "What is the name of the outer space theme park?",
+        responses: ["Moron Mountain", "Magic Mountain", "Money Mountain", "Mars Mountain"],
+        answer: 0
+    }
+    
+    var q10 = {
+        prompt: "How does Michael get to Looney Toons land?",
+        responses: ["Through a TV screen", "Through a golf hole", "Through a portal", "Through the backdoor of his gym"],
+        answer: 1
+    }
+    
+    var q11 = {
+        prompt: "Who does Bill Murray get mistaken for by the Monstars' Boss?",
+        responses: ["Chevy Chase", "Harold Ramis", "Dan Aykroyd", "Rodney Dangerfield"],
+        answer: 2
+    }
+
+    var q12 = {
+        prompt: "In order to get his 'powers' back, Charles Barkley promises God he will never go out with this artist again:",
+        responses: ["Mariah Carey", "Celine Dion", "Janet Jackson", "Madonna"],
+        answer: 3
+    }
 
     // create array of the questions
-    questions = [q1, q2];
+    questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
 
     // create variables to hold values important to game
     var correctGuesses = 0;
@@ -88,8 +147,8 @@ $(document).ready(function () {
         // clear page
         clearPage();
 
-        // set timeLeft to 5 for between question time
-        timeLeft = 5;
+        // set timeLeft to 3 for between question time
+        timeLeft = 3;
 
         run();
 
