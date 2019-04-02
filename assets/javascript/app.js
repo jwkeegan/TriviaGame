@@ -58,7 +58,7 @@ $(document).ready(function () {
     
     var q10 = {
         prompt: "How does Michael get to Looney Toons land?",
-        responses: ["Through a TV screen", "Through a golf hole", "Through a portal", "Through the backdoor of his gym"],
+        responses: ["Through a TV screen", "Through a golf hole", "Through a portal", "Through a door in his gym"],
         answer: 1
     }
     
@@ -270,6 +270,31 @@ $(document).ready(function () {
 
         // pass this.data to processAnswer
         processAnswer($(this).attr("data"));
+
+    });
+
+    // create audio element
+    var audioElement = document.createElement("audio");
+
+    // set source to song in assets/media
+    audioElement.setAttribute("src","assets/media/space_jam.mp3");
+
+    // create boolean for if music is playing
+    var isPlaying = false;
+
+    $("#theme-music").on("click", function() {
+
+        // if music is playing, stop it
+        if (isPlaying) {
+            audioElement.pause();
+            isPlaying = false;
+        } 
+        
+        // if music is not playing, start it
+        else {
+            audioElement.play();
+            isPlaying = true;
+        }
 
     });
 

@@ -40,7 +40,7 @@ div {
 
 #question {
     width: 80%;
-    margin: 0 auto;
+    margin: 10px auto 0;
 }
 
 #time-remaining {
@@ -62,6 +62,13 @@ div {
 
 #response:hover {
     border-color: black;
+}
+
+#theme-music {
+    position: relative;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
