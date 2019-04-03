@@ -193,7 +193,8 @@ $(document).ready(function () {
         $("#start-button").append("<button>Click here to try again!</button>");
 
         // show user how they did
-        quizQuestion.text("You answered " + correctGuesses + "/" + questions.length + " questions correctly");
+        quizQuestion.append("<div>Correct Guesses: " + correctGuesses + "</div>");
+        quizQuestion.append("<div>Incorrect Guesses: " + (questions.length - correctGuesses) + "</div>");
 
     }
 
