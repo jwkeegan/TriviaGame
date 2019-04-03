@@ -85,11 +85,16 @@ $(document).ready(function () {
     var curQuestion;
     var displayQuestion = false;
 
+    // create variables to store jQuery hooks
+    var quizQuestion = $("#question");
+    var timeRem = $("#time-remaining");
+    var quizAnswers = $("#answers");
+
     // create function to clear quiz window
     function clearPage() {
-        $("#question").empty();
-        $("#time-remaining").empty();
-        $("#answers").empty();
+        quizQuestion.empty();
+        timeRem.empty();
+        quizAnswers.empty();
     }
 
     // create function to randomize order of questions
@@ -122,18 +127,21 @@ $(document).ready(function () {
         // clear page
         clearPage();
 
-        // find the question in 
+        // find the question in questions array
         var question = questions[questionOrder[questionIndex]];
 
         // Put question prompt into question section of text
-        $("#question").text(question.prompt);
+        quizQuestion.text(question.prompt);
 
         // for each possible response, append a div 
         for (i = 0; i < question.responses.length; i++) {
-            $("#answers").append("<div id='response' data=" + i + ">" + question.responses[i] + "</div>");
+            quizAnswers.append("<div id='response' data=" + i + ">" + question.responses[i] + "</div>");
         }
 
+        // set timer to 30 and display it
         timeLeft = 30;
+        timeRem.text("Time Remaining: " + timeLeft);
+
         run();
 
     }
@@ -164,9 +172,11 @@ $(document).ready(function () {
 
         // Display user guess and correct answer
         if (answer >= 0) {
-            $("#question").append("<div>You Answered: " + questions[questionOrder[curQuestion]].responses[answer] + "</div>");
+            quizQuestion.append("<div>You Answered: " + questions[questionOrder[curQuestion]].responses[answer] + "</div>");
+        } else {
+            quizQuestion.append("<div>You ran out of time!</div>");
         }
-        $("#question").append("<div>Correct Answer: " + questions[questionOrder[curQuestion]].responses[correctAnswer] + "</div>");
+        quizQuestion.append("<div>Correct Answer: " + questions[questionOrder[curQuestion]].responses[correctAnswer] + "</div>");
 
         // increment curQuestion
         curQuestion++;
@@ -183,7 +193,7 @@ $(document).ready(function () {
         $("#start-button").append("<button>Click here to try again!</button>");
 
         // show user how they did
-        $("#question").text("You answered " + correctGuesses + "/" + questions.length + " questions correctly");
+        quizQuestion.text("You answered " + correctGuesses + "/" + questions.length + " questions correctly");
 
     }
 
@@ -205,7 +215,7 @@ $(document).ready(function () {
 
         // Display Time remaining if it's a question page
         if (displayQuestion) {
-            $("#time-remaining").text("Time Remaining: " + timeLeft);
+            timeRem.text("Time Remaining: " + timeLeft);
         }
 
         // at end of timer

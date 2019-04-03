@@ -9,7 +9,7 @@ body {
     min-height: 400px;
     margin: 20px auto 0;
 
-    border: 2px solid gray;
+    border: 2px solid #92c968;
     background-color: orange;
 }
 
@@ -28,6 +28,13 @@ h1 {
 #title-text {
     float: left;
     clear: right;
+}
+
+button {
+    background-color: #007b9f;
+    color: black;
+    border-radius: 4px;
+    border-color: #92c968;
 }
 
 #start-button {
